@@ -7,7 +7,7 @@ It's documentation [here.](https://textblob.readthedocs.io/en/dev/index.html)
 
 # Data Collection
 
-I used the Twitter API **tweepy** to collect tweets relating to the current pandemic of COVID-19 facing the world.
+I used the Twitter API **tweepy** to collect tweets relating to the current pandemic of COVID-19 facing the world.  
 You may view the script I designed for this task in this [repo.](https://github.com/lyraxvincent/twitter-tweepy)
 
 # Resources
