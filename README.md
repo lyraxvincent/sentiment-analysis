@@ -8,8 +8,8 @@ It's documentation [here.](https://textblob.readthedocs.io/en/dev/index.html)
 
 # Data Collection
 
-The Twitter API **tweepy** was used to collect tweets relating to the current pandemic of COVID-19 facing the world.  
-You may view the script I designed for this task in this [repo.](https://github.com/lyraxvincent/twitter-tweepy)
+The Twitter API **tweepy** was used to collect tweets related to COVID-19.  
+You may view the script collect_tweets.py
 
 # Resources
 
