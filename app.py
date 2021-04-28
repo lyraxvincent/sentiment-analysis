@@ -9,21 +9,22 @@ model = pickle.load(open('saved_model.pkl', 'rb'))
 #cols = ['text', '', '']
 cols = ['text']
 
+
 @app.route('/')
 def home():
     return render_template("home.html")
 
-@app.route('/predict',methods=['POST'])
+@app.route('/', methods=['POST'])
 def predict():
     int_features = [x for x in request.form.values()]
     final = np.array(int_features)
     data_unseen = pd.DataFrame([final], columns = cols)
-    prediction = model.predict(data_unseen)
+    prediction = model.predict(data_unseen.text)
     prediction = int(prediction)
-    return render_template('home.html',pred='Predicted Sentiment: {}'.format(prediction))
+    return render_template('home.html', pred='Predicted Sentiment: {}'.format(prediction))
 
 """
-@app.route('/predict_api',methods=['POST'])
+@app.route('/predict_api', methods=['POST'])
 def predict_api():
     data = request.get_json(force=True)
     data_unseen = pd.DataFrame([data])
