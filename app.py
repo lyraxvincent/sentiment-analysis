@@ -1,7 +1,7 @@
 from flask import Flask,request, url_for, redirect, render_template, jsonify
 import pandas as pd
 import numpy as np
-import pickle
+import pickle5 as pickle
 
 app = Flask(__name__)
 
