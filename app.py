@@ -20,9 +20,16 @@ def predict():
     int_features = [x for x in request.form.values()]
     final = np.array(int_features)
     data_unseen = pd.DataFrame([final], columns = cols)
-    prediction = model.predict(data_unseen.text)
-    prediction = int(prediction)
-    return render_template('home.html', pred='Predicted Sentiment: {}'.format(prediction))
+    prediction = int(model.predict(data_unseen.text))
+
+    if prediction == -1:
+        pred_display = "Negative \U0001F613"
+    elif prediction == 0:
+        pred_display = "Neutral \U0001F60C"
+    else:
+        pred_display = "Positive \U0001F60A"
+
+    return render_template('home.html', pred='Sentiment: {}'.format(pred_display))
 
 """
 @app.route('/predict_api', methods=['POST'])
