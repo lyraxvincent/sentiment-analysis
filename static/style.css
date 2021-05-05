@@ -17,7 +17,7 @@ body {
 	width: 100%;
 	height:100%;
 	font-family: "Arial Rounded MT Bold";
-	background: background: url("https://sentiment-analysis-web-app.herokuapp.com/static/img/bg.jpg");
+	background: background: url("https://sentlysis.herokuapp.com/static/img/bg.jpg");
 	color: #fff;
 	font-size: 18px;
 	text-align:center;
