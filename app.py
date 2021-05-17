@@ -31,14 +31,5 @@ def predict():
 
     return render_template('home.html', pred='Sentiment: {}'.format(pred_display))
 
-"""
-@app.route('/predict_api', methods=['POST'])
-def predict_api():
-    data = request.get_json(force=True)
-    data_unseen = pd.DataFrame([data])
-    prediction = model.predict(data_unseen)
-    output = int(prediction)
-    return jsonify(output)"""
-
 if __name__ == '__main__':
     app.run()#debug=True)
