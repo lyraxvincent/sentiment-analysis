@@ -14,6 +14,10 @@ You may view the script collect_tweets.py
 **UPDATE:**  
 - Added script (collect_tweets.sh) to collect more data. Here we use [Twint](https://github.com/twintproject/twint) as it is more efficient and flexible than tweepy. It also gathers a lot of data in minimal time.
 
+**UPDATE 2:** (16-02-2022)
+- Added external dataset; [Sentiment140 dataset](https://www.kaggle.com/kazanova/sentiment140)  
+This minimizes data labeling errors by diversifying data sources.
+
 ## **Deployment**
 A web-app handling sentiment analysis where a user inputs their text and the system outputs the sentiment associated with it was deployed using the Flask API and is live [here.](https://sentlysis.herokuapp.com/)
 
