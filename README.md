@@ -12,7 +12,7 @@ The Twitter API **tweepy** was used to collect tweets related to COVID-19.
 You may view the script collect_tweets.py
 
 **UPDATE:**  
-- Added script (collect_tweets.sh) to collect more data. Here we use [Twint](https://github.com/twintproject/twint) as it is more efficient and flexible that tweepy. It also gathers a lot of data in minimal time.
+- Added script (collect_tweets.sh) to collect more data. Here we use [Twint](https://github.com/twintproject/twint) as it is more efficient and flexible than tweepy. It also gathers a lot of data in minimal time.
 
 ## **Deployment**
 A web-app handling sentiment analysis where a user inputs their text and the system outputs the sentiment associated with it was deployed using the Flask API and is live [here.](https://sentlysis.herokuapp.com/)
