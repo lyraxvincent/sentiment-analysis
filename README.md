@@ -15,7 +15,7 @@ You may view the script collect_tweets.py
 - Added script (collect_tweets.sh) to collect more data. Here we use [Twint](https://github.com/twintproject/twint) as it is more efficient and flexible than tweepy. It also gathers a lot of data in minimal time.
 
 **UPDATE 2:** (16-02-2022)
-- Added external dataset; [Sentiment140 dataset](https://www.kaggle.com/kazanova/sentiment140)  
+- Added external dataset (see notebook 2)
 This minimizes data labeling errors by diversifying data sources.
 
 ## **Deployment**
