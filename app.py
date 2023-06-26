@@ -1,35 +1,20 @@
-from flask import Flask,request, url_for, redirect, render_template, jsonify
+import streamlit as st
+import pickle
 import pandas as pd
 import numpy as np
-import pickle5 as pickle
-import sklearn
 
-app = Flask(__name__)
+labels_dict = {-1: "Negative 😣", 0: "Neutral 😌", 1: "Positive 😊"}
+
+text = st.text_input(label="Input text:", value="")
 
 model = pickle.load(open('saved_model.pkl', 'rb'))
-#cols = ['text', '', '']
-cols = ['text']
+prediction = model.predict(pd.DataFrame([np.array(text)], columns=['text']).text)
 
+with st.container():
+    col1, col2, _,_,_ = st.columns(5)
 
-@app.route('/')
-def home():
-    return render_template("home.html")
+    with col1:
+        st.caption("Predicted sentiment: ")
 
-@app.route('/', methods=['POST'])
-def predict():
-    int_features = [x for x in request.form.values()]
-    final = np.array(int_features)
-    data_unseen = pd.DataFrame([final], columns = cols)
-    prediction = int(model.predict(data_unseen.text))
-
-    if prediction == -1:
-        pred_display = "Negative \U0001F613"
-    elif prediction == 0:
-        pred_display = "Neutral \U0001F60C"
-    else:
-        pred_display = "Positive \U0001F60A"
-
-    return render_template('home.html', pred='Sentiment: {}'.format(pred_display))
-
-if __name__ == '__main__':
-    app.run()#debug=True)
+    with col2:
+        st.markdown(f":green[{pd.Series(prediction).map(labels_dict).values[0]}]")
